@@ -7,7 +7,7 @@ node['rtorrent']['users'].each_key do |username|
   user username do
     supports :manage_home => true
     home "/home/#{username}"
-    shell "/bin/bash"
+    shell '/bin/bash'
   end
 
   %W(.rtorrent .session active_torrent download).each do |dir|
