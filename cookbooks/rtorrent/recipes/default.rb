@@ -2,9 +2,13 @@ package 'rtorrent' do
   action :upgrade
 end
 
-node['rtorrent']['users'].each do |username|
+node['rtorrent']['users'].each_key do |username|
 
-  user username
+  user username do
+    supports :manage_home => true
+    home "/home/#{username}"
+    shell "/bin/bash"
+  end
 
   %W(.rtorrent .session active_torrent download).each do |dir|
     directory "/home/#{username}/#{dir}" do
@@ -16,7 +20,7 @@ node['rtorrent']['users'].each do |username|
 
   template "/home/#{username}/.rtorrent.rc" do
     source 'rtorrent.rc.erb'
-    mode 0440
+    mode 0644
     owner username
     group username
     variables({'config' => node['rtorrent']['default'].merge(node['rtorrent']['users'][username])})

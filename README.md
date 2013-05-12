@@ -38,5 +38,10 @@ Install Ruby through RBENV, chef, the cookbooks and run them locally :
   rbenv sudo chef-solo -c solo.rb -j shamu.json
 ~~~
 
+Password and SSH keys :
+-----------------------
+
+~~~ sh
+
   
   

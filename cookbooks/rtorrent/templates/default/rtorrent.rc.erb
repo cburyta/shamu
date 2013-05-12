@@ -1,14 +1,14 @@
-download_rate = <%= config['download_rate'] %>
-upload_rate = <%= config['upload_rate'] %>
-directory = <%= config['directory'] %>
-session = <%= config['session'] %>
-port_range = <%= config['port_range'] %>
-port_random = <%= config['port_random'] %>
-check_hash = <%= config['check_hash'] %>
-max_memory_usage = <%= config['max_memory_usage'] %>
-encryption = <%= config['encryption'] %>
+download_rate = <%= @config['download_rate'] %>
+upload_rate = <%= @config['upload_rate'] %>
+directory = <%= @config['directory'] %>
+session = <%= @config['session'] %>
+port_range = <%= @config['port_range'] %>
+port_random = <%= @config['port_random'] %>
+check_hash = <%= @config['check_hash'] %>
+max_memory_usage = <%= @config['max_memory_usage'] %>
+encryption = <%= @config['encryption'] %>
 schedule = watch_directory,15,15,load_start="./torrent_active/*.torrent"
 schedule = tied_directory,15,15,"start_tied="
 schedule = untied_directory,15,15,"stop_untied="
-use_udp_trackers = <%= config['use_udp_trackers'] %>
-system.method.set_key = event.download.finished,move_complete,"d.set_directory=<%= config['on_complete_move_to'] %>;execute=mv,-u,$d.get_base_path=,<%= config['on_complete_move_to'] %>"
+use_udp_trackers = <%= @config['use_udp_trackers'] %>
+system.method.set_key = event.download.finished,move_complete,"d.set_directory=<%= @config['on_complete_move_to'] %>;execute=mv,-u,$d.get_base_path=,<%= @config['on_complete_move_to'] %>"

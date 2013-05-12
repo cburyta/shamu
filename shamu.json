@@ -3,7 +3,8 @@
         "recipe[fail2ban]",
         "recipe[mysql::client]",
         "recipe[mysql::server]",
-        "recipe[rtorrent]"
+        "recipe[rtorrent]",
+        "recipe[vsftpd]"
 //        "recipe[apache2]",
 //        "recipe[wordpress]",
 //        "recipe[teamspeak]",
