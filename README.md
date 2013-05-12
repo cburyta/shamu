@@ -35,7 +35,7 @@ Install Ruby through RBENV, chef, the cookbooks and run them locally :
   bundle install
   rbenv rehash
   berks install --path vendor/cookbooks
-  rbenv sudo chef-solo -c solo.rb -j shamu.json
+  ./provision.sh
 ~~~
 
 Password and SSH keys :

@@ -14,7 +14,7 @@ node['rtorrent']['users'].each_key do |username|
     directory "/home/#{username}/#{dir}" do
       owner username
       group username
-      mode 00644
+      mode 00755
     end
   end
 
