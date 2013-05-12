@@ -1,0 +1,37 @@
+{
+    "run_list": [
+        "recipe[fail2ban]",
+        "recipe[mysql::client]",
+        "recipe[mysql::server]",
+        "recipe[rtorrent]"
+//        "recipe[apache2]",
+//        "recipe[wordpress]",
+//        "recipe[teamspeak]",
+//        "recipe[vsftpd]",
+//        "recipe[subsonic]",
+//        "recipe[streaming-media-exporter]"
+    ],
+
+    "mysql": {
+        "server_root_password": "iloverandompasswordsbutthiswilldo",
+        "server_repl_password": "iloverandompasswordsbutthiswilldo",
+        "server_debian_password": "iloverandompasswordsbutthiswilldo",
+        "remove_anonymous_users": "true",
+        "allow_remote_root": "false"
+    },
+
+    "rtorrent": {
+        "users": {
+            "rtorrent": {
+                "download_rate": "7000",
+                "upload_rate": "7000",
+                "port_range":"13482-13500"
+            },
+            "shamu": {
+                "download_rate": "4000",
+                "upload_rate": "4000",
+                "port_range":"12482-12500"
+            }
+        }
+    }
+}

@@ -16,7 +16,7 @@ From a fresh Debian 7 install as root :
 as user shamu :
 ---------------
 
-Install Ruby through RBENV : 
+Install Ruby through RBENV, chef, the cookbooks and run them locally :
 
 ~~~ sh
   sudo apt-get install git curl libssl-dev libreadline-dev zlib1g zlib1g-dev libmysqlclient-dev libcurl4-openssl-dev libxslt-dev libxml2-dev
@@ -25,7 +25,17 @@ Install Ruby through RBENV :
   echo 'eval "$(rbenv init -)"' >> ~/.profile
   exec $SHELL -l
   git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-  rbenv install 2.0.0-p0
+  git clone git://github.com/dcarley/rbenv-sudo.git ~/.rbenv/plugins/rbenv-sudo
+  rbenv install 1.9.3-p392
+  rbenv rehash
+  git clone git://github.com/m-ryan/shamu.git ~/install
+  cd ~/install
+  gem install bundler --no-ri --no-rdoc
+  rbenv rehash
+  bundle install
+  rbenv rehash
+  berks install --path vendor/cookbooks
+  rbenv sudo chef-solo -c solo.rb -j shamu.json
 ~~~
 
   
