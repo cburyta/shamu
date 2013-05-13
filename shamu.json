@@ -1,5 +1,6 @@
 {
     "run_list": [
+        "recipe[ufw]",
         "recipe[fail2ban]",
         "recipe[mysql::client]",
         "recipe[mysql::server]",
@@ -12,6 +13,16 @@
 //        "recipe[subsonic]",
 //        "recipe[streaming-media-exporter]"
     ],
+
+    "firewall": {
+        "rules": [
+            {"ftp": {"port":"21"}},
+            {"http": {"port":"80"}},
+            {"https": {"port":"443"}},
+            {"rtorrent for user rtorrent": {"port":"13482"}},
+            {"rtorrent for user shamu": {"port":"12482"}}
+        ]
+    },
 
     "mysql": {
         "bind_address": "localhost",
@@ -27,13 +38,15 @@
             "rtorrent": {
                 "download_rate": "7000",
                 "upload_rate": "7000",
-                "port_range":"13482-13500"
+                "port_range":"13482-13482"
             },
             "shamu": {
                 "download_rate": "4000",
                 "upload_rate": "4000",
-                "port_range":"12482-12500"
+                "port_range":"12482-12482"
             }
         }
     }
+
+
 }
