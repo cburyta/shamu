@@ -10,7 +10,7 @@ node['rtorrent']['users'].each_key do |username|
     shell '/bin/bash'
   end
 
-  %W(.rtorrent .session active_torrent download).each do |dir|
+  %W(.rtorrent .session torrent_active download).each do |dir|
     directory "/home/#{username}/#{dir}" do
       owner username
       group username
