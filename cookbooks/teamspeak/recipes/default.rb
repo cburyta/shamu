@@ -18,6 +18,7 @@ end
 
 cookbook_file '/etc/init.d/teamspeak.sh' do
   source 'teamspeak.sh'
+  mode '0700'
 end
 
 execute '/etc/init.d/teamspeak.sh start' do

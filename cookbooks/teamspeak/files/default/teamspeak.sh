@@ -25,3 +25,4 @@ test -x $DAEMON || exit 0
 
 cd $DIR
 sudo -u teamspeak ./ts3server_startscript.sh $1
+
