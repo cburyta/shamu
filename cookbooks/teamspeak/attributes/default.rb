@@ -1,0 +1,1 @@
+default['teamspeak']['download_url'] ='http://ftp.4players.de/pub/hosted/ts3/releases/3.0.7.2/teamspeak3-server_linux-amd64-3.0.7.2.tar.gz'

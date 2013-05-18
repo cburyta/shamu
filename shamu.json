@@ -5,7 +5,8 @@
         "recipe[mysql::client]",
         "recipe[mysql::server]",
         "recipe[rtorrent]",
-        "recipe[vsftpd]"
+        "recipe[vsftpd]",
+        "recipe[teamspeak]"
 //        "recipe[apache2]",
 //        "recipe[wordpress]",
 //        "recipe[teamspeak]",
