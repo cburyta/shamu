@@ -38,8 +38,11 @@ Install Ruby through RBENV, chef, the cookbooks and run them locally :
   ./provision.sh
 ~~~
 
-Password and SSH keys :
+After provision :
 -----------------------
+- Set the password for users dl, rtorrent and teamspeak
+- Make sure teamspeak is running using "sudo /etc/init.d/teamspeak.sh start"
+- Connect to teamspeak using the one time server admin key in logs (/home/teamspeak/teamspeak3-server_linux-amd64/logs)
 
 ~~~ sh
 
