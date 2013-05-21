@@ -1,0 +1,1 @@
+default['subsonic']['download_url'] ='http://garr.dl.sourceforge.net/project/subsonic/subsonic/4.8/subsonic-4.8-war.zip'

@@ -6,12 +6,12 @@
         "recipe[mysql::server]",
         "recipe[rtorrent]",
         "recipe[vsftpd]",
-        "recipe[teamspeak]"
+        "recipe[teamspeak]",
+        "recipe[java::oracle]",
+        "recipe[tomcat]",
+        "recipe[subsonic]"
 //        "recipe[apache2]",
 //        "recipe[wordpress]",
-//        "recipe[teamspeak]",
-//        "recipe[vsftpd]",
-//        "recipe[subsonic]",
 //        "recipe[streaming-media-exporter]"
     ],
 
@@ -49,7 +49,8 @@
                 "port_range":"12482-12482"
             }
         }
-    }
+    },
 
+    "java": {"oracle": { "accept_oracle_download_terms": true}}
 
 }
