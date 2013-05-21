@@ -13,7 +13,7 @@ end
 execute 'tar xzf teamspeak.tar.gz' do
   cwd '/home/teamspeak'
   user 'teamspeak'
-  not_if 'test -d /etc/init.d/teamspeak.sh'
+  not_if 'test -f /etc/init.d/teamspeak.sh'
 end
 
 cookbook_file '/etc/init.d/teamspeak.sh' do
