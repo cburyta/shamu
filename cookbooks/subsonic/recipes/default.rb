@@ -1,3 +1,7 @@
+package 'tomcat7' do
+  action 'upgrade'
+end
+
 user 'subsonic' do
   supports :manage_home => true
   home '/home/subsonic'
