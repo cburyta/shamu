@@ -1,4 +1,4 @@
-package 'tomcat7' do
+package 'tomcat6' do
   action :upgrade
 end
 
@@ -22,4 +22,14 @@ end
 execute 'unzip -o subsonic.zip' do
   cwd '/home/subsonic'
   user 'subsonic'
+end
+
+directory '/var/subsonic' do
+  owner 'tomcat6'
+  group 'tomcat6'
+  mode 00755
+end
+
+link '/var/lib/tomcat6/webapps/subsonic.war' do
+  to '/home/subsonic/subsonic.war'
 end
