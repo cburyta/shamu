@@ -21,7 +21,7 @@ Install Ruby through RBENV, chef, the cookbooks and run them locally :
 
 ~~~ sh
   sudo apt-get install git
-  git clone git://github.com/sstephenson/rbenv.git ~/.rbenv
+  git clone git://github.com/m-ryan/shamu.git ~/install
   ./install.sh
 
 ~~~
