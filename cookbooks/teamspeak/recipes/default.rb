@@ -5,6 +5,7 @@ user 'teamspeak' do
 end
 
 remote_file '/home/teamspeak/teamspeak.tar.gz' do
+  action :create_if_missing
   source node[:teamspeak][:download_url]
   owner 'teamspeak'
   group 'teamspeak'

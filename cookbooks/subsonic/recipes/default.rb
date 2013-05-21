@@ -1,5 +1,5 @@
 package 'tomcat7' do
-  action 'upgrade'
+  action :upgrade
 end
 
 user 'subsonic' do
@@ -9,16 +9,17 @@ user 'subsonic' do
 end
 
 remote_file '/home/subsonic/subsonic.zip' do
-  source node[:subsonic][:download_url]
+  action :create_if_missing
+  source node['subsonic']['download_url']
   owner 'subsonic'
   group 'subsonic'
 end
 
 package 'unzip' do
-  action 'upgrade'
+  action :upgrade
 end
 
-execute 'unzip subsonic.zip' do
+execute 'unzip -o subsonic.zip' do
   cwd '/home/subsonic'
   user 'subsonic'
 end
