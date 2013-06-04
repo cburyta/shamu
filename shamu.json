@@ -7,8 +7,9 @@
         "recipe[rtorrent]",
         "recipe[vsftpd]",
         "recipe[teamspeak]",
-        "recipe[subsonic]"
-//        "recipe[apache2]",
+        "recipe[subsonic]",
+        "recipe[subsonic:exporter]",
+        "recipe[apache2]"
 //        "recipe[wordpress]",
 //        "recipe[streaming-media-exporter]"
     ],
