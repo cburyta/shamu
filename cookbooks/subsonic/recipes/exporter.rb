@@ -7,6 +7,7 @@ remote_file '/home/subsonic/exporter.war' do
   source node['exporter']['download_url']
   owner 'subsonic'
   group 'subsonic'
+  mode 0644
 end
 
 execute 'git clone git://github.com/m-ryan/groove-dl.git groovedl' do
